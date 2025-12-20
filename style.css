@@ -37,14 +37,14 @@ header {
 
 /* تنظیم دقیق اندازه عکس (راه حل اصلی مشکل تو) */
 .product-card img {
-    width: 100%;       /* عرض عکس به اندازه کارت شود */
+    width: 40%;       /* عرض عکس به اندازه کارت شود */
     height: 250px;      /* ارتفاع عکس ثابت شود */
     object-fit: cover;  /* عکس کشیده نشود و مرتب برش بخورد */
     border-radius: 8px;
 }
 
 .product-card h3 {
-    font-size: 1.1rem;
+    font-size: 3rem;
     margin: 10px 0;
 }
 
