@@ -22,7 +22,7 @@ header {
     /* این خط باعث می‌شود محصولات در ردیف‌های ۳ یا ۴ تایی قرار بگیرند */
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
-    padding: 40px;
+    padding: 10px;
 }
 
 /* استایل کارت محصول */
