@@ -10,7 +10,7 @@ body {
 header {
     background-color: #040404;
     color: rgb(0, 161, 161);
-    padding: 40px 50px;
+    padding: 50px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
