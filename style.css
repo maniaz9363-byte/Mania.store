@@ -20,7 +20,7 @@ header {
 .container {
     display: grid;
     /* این خط باعث می‌شود محصولات در ردیف‌های ۳ یا ۴ تایی قرار بگیرند */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
     gap: 20px;
     padding: 20px;
 }
