@@ -1,0 +1,63 @@
+/* تنظیمات کلی */
+body {
+    direction: rtl;
+    font-family: Tahoma, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+/* هدر */
+header {
+    background-color: #040404;
+    color: rgb(0, 161, 161);
+    padding: 40px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* کانتینر اصلی برای چیدمان کارتی */
+.container {
+    display: grid;
+    /* این خط باعث می‌شود محصولات در ردیف‌های ۳ یا ۴ تایی قرار بگیرند */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+/* استایل کارت محصول */
+.product-card {
+    background: rgb(219, 224, 224);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* تنظیم دقیق اندازه عکس (راه حل اصلی مشکل تو) */
+.product-card img {
+    width: 100%;       /* عرض عکس به اندازه کارت شود */
+    height: 250px;      /* ارتفاع عکس ثابت شود */
+    object-fit: cover;  /* عکس کشیده نشود و مرتب برش بخورد */
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #308ba9;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+header h1 {
+    color: #c9c9c9; /* رنگ مورد نظر خود را اینجا وارد کنید */
+    font-family: 'Tahoma', sans-serif; /* نام فونت مورد نظر */
+    font-size: 20px; /* اندازه متن */
+}
