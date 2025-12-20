@@ -10,7 +10,7 @@ body {
 header {
     background-color: #040404;
     color: rgb(0, 161, 161);
-    padding: 50px 50px;
+    padding: 40px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,8 +37,8 @@ header {
 
 /* تنظیم دقیق اندازه عکس (راه حل اصلی مشکل تو) */
 .product-card img {
-    width: 40%;       /* عرض عکس به اندازه کارت شود */
-    height: 25px;      /* ارتفاع عکس ثابت شود */
+    width: 100%;       /* عرض عکس به اندازه کارت شود */
+    height: 40px;      /* ارتفاع عکس ثابت شود */
     object-fit: cover;  /* عکس کشیده نشود و مرتب برش بخورد */
     border-radius: 40px;
 }
