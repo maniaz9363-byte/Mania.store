@@ -2,15 +2,15 @@
 body {
     direction: rtl;
     font-family: Tahoma, sans-serif;
-    background-color: #ffffff;
-    margin: 0;
+    background-color: #d2cdcd;
+    margin: 60;
 }
 
 /* هدر */
 header {
-    background-color: #040404;
-    color: rgb(0, 161, 161);
-    padding: 40px 60px;
+    background-color: #7a7272;
+    color: rgb(7, 6, 6);
+    padding: 10px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,44 +20,55 @@ header {
 .container {
     display: grid;
     /* این خط باعث می‌شود محصولات در ردیف‌های ۳ یا ۴ تایی قرار بگیرند */
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 10px;
-    padding: 10px;
+    padding: 40px;
+justify-items: center;
+}
+@media (max-width: 600px) {
+    .container  {
+        grid-template-columns: 
+        repeat(1,  1fr);
+    }
 }
 
 /* استایل کارت محصول */
 .product-card {
-    background: rgb(219, 224, 224);
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
+    background: rgb(245, 242, 242) !important;
+    border: 2px solid #333 !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgb(50, 49, 51) !important;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 }
 
 /* تنظیم دقیق اندازه عکس (راه حل اصلی مشکل تو) */
 .product-card img {
     width: 100%;       /* عرض عکس به اندازه کارت شود */
-    height: 40px;      /* ارتفاع عکس ثابت شود */
-    object-fit: cover;  /* عکس کشیده نشود و مرتب برش بخورد */
-    border-radius: 40px;
+    height: 250px;      /* ارتفاع عکس ثابت شود */
+    object-fit: cover; 
+    display: block; /* عکس کشیده نشود و مرتب برش بخورد */
+    border-radius: 15px;
 }
 
 .product-card h3 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     margin: 10px 0;
 }
 
 button {
-    background-color: #308ba9;
-    color: rgb(255, 255, 255);
+    background-color: #26757c;
+    color: rgb(255, 254, 254);
     border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    border-radius: 500px;
     cursor: pointer;
 }
 header h1 {
-    color: #c9c9c9; /* رنگ مورد نظر خود را اینجا وارد کنید */
+    color: #030303; /* رنگ مورد نظر خود را اینجا وارد کنید */
     font-family: 'Tahoma', sans-serif; /* نام فونت مورد نظر */
     font-size: 20px; /* اندازه متن */
 }
