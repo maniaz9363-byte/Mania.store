@@ -1,11 +1,9 @@
-
-
 * تنظیمات کلی */
 body {
     direction: rtl;
     font-family: Tahoma, sans-serif;
     background-color: #d2cdcd;
-    margin: 60px;
+    margin: 60;
 }
 
 /* هدر */
@@ -25,24 +23,21 @@ header {
     grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 10px;
     padding: 40px;
+justify-items: center;
 }
 @media (max-width: 600px) {
     .container  {
         grid-template-columns: 
-        repeat(2,  1fr);
-        gap: 12px;
-        padding: 20px;
-    } 
-
+        repeat(1,  1fr);
+    }
 }
 
 /* استایل کارت محصول */
 .product-card {
-    width: 100%;
     background: rgb(245, 242, 242) !important;
     border: 2px solid #333 !important;
     border-radius: 15px !important;
-    padding: 12px !important;
+    padding: 20px !important;
     text-align: center;
     box-shadow: 0 10px 20px rgb(50, 49, 51) !important;
 display: flex;
@@ -53,11 +48,10 @@ justify-content: space-between;
 /* تنظیم دقیق اندازه عکس (راه حل اصلی مشکل تو) */
 .product-card img {
     width: 100%;       /* عرض عکس به اندازه کارت شود */
-    height: 120px;      /* ارتفاع عکس ثابت شود */
+    height: 250px;      /* ارتفاع عکس ثابت شود */
     object-fit: cover; 
     display: block; /* عکس کشیده نشود و مرتب برش بخورد */
-    border-radius: 10px;
-    margin-bottom: 8px;
+    border-radius: 15px;
 }
 
 .product-card h3 {
