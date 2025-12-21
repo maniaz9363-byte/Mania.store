@@ -20,8 +20,8 @@ header {
 .container {
     display: grid;
     /* این خط باعث می‌شود محصولات در ردیف‌های ۳ یا ۴ تایی قرار بگیرند */
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
     padding: 40px;
 justify-items: center;
 }
@@ -48,10 +48,12 @@ justify-content: space-between;
 /* تنظیم دقیق اندازه عکس (راه حل اصلی مشکل تو) */
 .product-card img {
     width: 100%;       /* عرض عکس به اندازه کارت شود */
-    height: 250px;      /* ارتفاع عکس ثابت شود */
-    object-fit: cover; 
+    height: 200px;      /* ارتفاع عکس ثابت شود */
+    object-fit: contain;
+    background-color: aliceblue; 
     display: block; /* عکس کشیده نشود و مرتب برش بخورد */
-    border-radius: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .product-card h3 {
@@ -72,4 +74,3 @@ header h1 {
     font-family: 'Tahoma', sans-serif; /* نام فونت مورد نظر */
     font-size: 20px; /* اندازه متن */
 }
-
