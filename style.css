@@ -20,8 +20,8 @@ header {
 .container {
     display: grid;
     /* این خط باعث می‌شود محصولات در ردیف‌های ۳ یا ۴ تایی قرار بگیرند */
-    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
     padding: 40px;
 justify-items: center;
 }
