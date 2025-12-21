@@ -1,243 +1,75 @@
-
-:root {
-    --primary: #1e3a8a;   /* آبی تیره */
-    --secondary: #2563eb; /* آبی دکمه */
-    --bg: #e0e0e0;
-       /* پس‌زمینه */
-    --card: #ffffff;
-}
+* تنظیمات کلی */
 body {
-    font-family: 'Vazirmatn', sans-serif;
     direction: rtl;
-    margin: 0;
-    padding: 20px;
-    background-color:  var(--bg);
+    font-family: Tahoma, sans-serif;
+    background-color: #d2cdcd;
+    margin: 60;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* محصولات */
-#products {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-#products > div {
-    background: var(--card);
-    border-radius: 14px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-#products > div:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-
-#products img {
-    max-width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-/* دکمه‌ها */
-button {
-    transition: background 0.3s, transform 0.2s;
-}
-button:hover {
-    transform: scale(1.05);
-}
-
-/* سبد خرید */
-#cart-container {
-    z-index: 1000;
-}
-#cart-items {
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    background: var(--card);
-    padding: 15px;
-    color: #1e1e1e; /* رنگ متن تیره برای لایت مود */
-}
-
-#cart-items img {
-    vertical-align: middle;
-}
-
-/* modal */
-#product-modal {
-    position: fixed;
-    inset: 0; /* بالا، پایین، چپ، راست صفر */
-    background: rgba(0,0,0,0.6);
-    display: flex;           /* اضافه کن */
-    justify-content: center;  /* وسط افقی */
-    align-items: center;      /* وسط عمودی */
-    z-index: 2000;
-    transition: opacity 0.3s ease;
-}
-#modal-content-wrapper {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 550px;
-    max-height: 80%;
-    overflow: auto;
-    position: relative;
-    text-align: center;
-    animation: scaleIn 0.3s ease;
-}
-
-#modal-content {
-    background: var(--card);
-    padding: 25px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 550px;
-    text-align: center;
-    animation: scaleIn 0.3s ease;
-    position: relative; /* مطمئن شو position relative باشه */
-}
-
-
-@keyframes scaleIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-h1 {
-    color: var(--primary);
-    font-weight: 700;
-}
-#close-modal {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    color: #555;
-}
-
-#close-modal:hover {
-    color: red;
-}
-#cart-container button {
-    background-color: var(--primary);
-    border-radius: 10px;
-}
-
-#cart-items {
-    background: var(--card);
-    padding: 15px;
-}
-
-#cart-items div {
-    margin-bottom: 10px;
-    /* دکمه‌های داخل سبد خرید */
-#cart-items button {
-    background-color: var(--primary);
-    color: #fff;
-}
-
-/* دکمه‌های داخل سبد خرید در دارک مود */
-body.dark #cart-items button {
-    background-color: var(--secondary);
-    color: #fff;
-}
-
-}
-body.dark {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --primary: #38bdf8;
-    --secondary: #0ea5e9;
-    color: #e5e7eb;
-}
-body.dark #cart-items {
-    background: var(--card);  /* رنگ پس‌زمینه سبد خرید */
-    color: #e5e7eb;           /* رنگ متن داخل سبد خرید */
-}
-
-#dark-toggle {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    padding: 8px 12px;
-    border-radius: 50%;
-    font-size: 18px;
-}
-/* کارت محصولات */
-.product-card {
-    background: var(--card);
-    border-radius: 14px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.product-card:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* دکمه افزودن */
-.btn-add {
-    background-color: var(--primary);
-color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-.btn-add:hover {
-    background-color: var(--secondary);
-    transform: scale(1.05);
-}
-/* دکمه بستن مودال – شیک و مینیمال */
-#close-modal {
-    position: absolute;
-    top: 16px;
-    left: 16px; /* چون rtl هست */
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
+/* هدر */
+header {
+    background-color: #7a7272;
+    color: rgb(7, 6, 6);
+    padding: 10px 50px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 300;
+}
+
+/* کانتینر اصلی برای چیدمان کارتی */
+.container {
+    display: grid;
+    /* این خط باعث می‌شود محصولات در ردیف‌های ۳ یا ۴ تایی قرار بگیرند */
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 10px;
+    padding: 40px;
+justify-items: center;
+}
+@media (max-width: 600px) {
+    .container  {
+        grid-template-columns: 
+        repeat(1,  1fr);
+    }
+}
+
+/* استایل کارت محصول */
+.product-card {
+    background: rgb(245, 242, 242) !important;
+    border: 2px solid #333 !important;
+    border-radius: 15px !important;
+    padding: 20px !important;
+    text-align: center;
+    box-shadow: 0 10px 20px rgb(50, 49, 51) !important;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+/* تنظیم دقیق اندازه عکس (راه حل اصلی مشکل تو) */
+.product-card img {
+    width: 100%;       /* عرض عکس به اندازه کارت شود */
+    height: 250px;      /* ارتفاع عکس ثابت شود */
+    object-fit: cover; 
+    display: block; /* عکس کشیده نشود و مرتب برش بخورد */
+    border-radius: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #26757c;
+    color: rgb(255, 254, 254);
+    border: none;
+    padding: 15px 20px;
+    border-radius: 500px;
     cursor: pointer;
-    color: var(--primary);
-    background: rgba(255,255,255,0.8);
-    transition: all 0.25s ease;
+}
+header h1 {
+    color: #030303; /* رنگ مورد نظر خود را اینجا وارد کنید */
+    font-family: 'Tahoma', sans-serif; /* نام فونت مورد نظر */
+    font-size: 20px; /* اندازه متن */
 }
 
-#close-modal:hover {
-    background: rgba(0,0,0,0.08);
-    transform: rotate(90deg) scale(1.1);
-}
-
-/* دارک مود */
-body.dark #close-modal {
-    color: #e5e7eb;
-    background: rgba(0,0,0,0.5); /* بک‌گراند تیره نیمه شفاف */
-}
-
-body.dark #close-modal:hover {
-    background: rgba(255,255,255,0.1);
-}
