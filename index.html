@@ -1,25 +1,39 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>فروشگاه مد مانیا</title>
+    <title> مانیا فروشگاه پوشاک </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>بوتیک پوشاک مانیا ✯</h1>
-        <div class="cart-btn" onclick="openCart()">
-            🛒 سبد خرید ↩︎(<span id="cart-count">0</span>)
-        </div>
-    </header>
 
-    <div id="product-grid" class="container"></div>
-
-    <div id="modal" class="modal">
-        <div class="modal-content" id="modal-body"></div>
+<header>
+    <h1>فروشگاه پوشاک</h1>
+    <div id="cart-icon">
+(<span id="cart-cout">0</span>)سبد خرید 🛒
     </div>
+</header>
+</main>
+    <div id="products"></div>
+</main>
+<!-- سبد خرید -->
+<div id="cart-modal" class="hidden">
+    <h2>سبد خرید</h2>
+    <div id="cart-items"></div>
+    <h3>مجموع: <span id="total-price">0</span> تومان</h3>
+    <button onclick="closeCart()">بستن</button>
+    <button class="confirm" onclick="comfirmOrder()">تأیید نهایی</button>
+</div>
+<!-- جزئیات محصول -->
+<div id="product-modal" class="hidden">
+    <h2 id="detail-name"></h2>
+    <img id="detail-image" style="width:200px">
+    <p id="detail-desc"></p>
+    <p>قیمت: <span id="detail-price"></span> تومان</p>
 
-    <script src="script.js"></script>
+    <button id="add-btn"> افزودن به سبد خرید</button>
+    <button onclick="closeProduct()">بستن</button>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
-         
