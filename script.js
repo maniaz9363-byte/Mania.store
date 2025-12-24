@@ -1,127 +1,129 @@
 // لیست ۱۵ محصول پوشاک
 const products = [
-    { id: 1, name: "شال گردن ", price: 750000, img: "images/15.jpg", desc: "بسیار گرم" },
-    { id: 2, name: "کت خز ", price: 6000000, img: "images/1.jpg", desc: "مناسب با ترند سال و" },
-    { id: 3, name: "پالتو زنانه ", price: 7000000, img: "images/2.jpg", desc: "گرم و با دوام " },
-    { id: 4, name: "کت و شلوار ", price: 7000000, img: "images/3.jpg", desc: "مناسب هر فصل " },
-    { id: 5, name: "کت و دامن ", price: 5000000, img: "images/4.jpg", desc: "پارچه درجه یک" },
-    { id: 6, name: "کت چرمی ", price: 6000000, img: "images/5.jpg", desc: "چرم طبیعی ت" },
-    { id: 7, name: "تیشرت سفید مردانه ", price: 1500000, img: "images/6.jpg", desc: "کاملا نخی " },
-    { id: 8, name: "شلوار جین ", price: 4000000, img: "images/7.jpg", desc: "سنگشور شده " },
-    { id: 9, name: "کفش ورزشی ", price: 8000000, img: "images/8.jpg", desc: "بسیار راحت " },
-    { id: 10, name: "سوییشرت مردانه ", price: 2000000, img: "images/9.jpg", desc: "سبک و راحت " },
-    { id: 11, name: "جلیقه ", price: 3000000, img: "images/10.jpg", desc: "دارای جیب " },
-    { id: 12, name: "دستکش چرمی ", price: 1000000, img: "images/11.jpg", desc: "چرمی و خزدار " },
-    { id: 13, name: "عینک افتابی ", price: 12000000, img: "images/12.jpg", desc: "پلاریزه ومحاقظ (uv) " },
-    { id: 14, name: "عطر ", price: 15000000, img: "images/13.jpg", desc: "باپخش بوی بالا " },
-    { id: 15, name: "کیف زنانه", price: 5500000, img: "images/14.jpg", desc: "جادار با بند بلند " },
+    { id: 1, name: "شال گردن ", price: 750000, image: "images/p15.jpg", description: "بسیار گرم" },
+    { id: 2, name: "کت خز ", price: 6000000, image: "images/p1.jpg", description: "مناسب با ترند سال و" },
+    { id: 3, name: "پالتو زنانه ", price: 7000000, image: "images/p2.jpg", description: "گرم و با دوام " },
+    { id: 4, name: "کت و شلوار ", price: 7000000, image: "images/p3.jpg", description: "مناسب هر فصل " },
+    { id: 5, name: "کت و دامن ", price: 5000000, image: "images/p4.jpg", description: "پارچه درجه یک" },
+    { id: 6, name: "کت چرمی ", price: 6000000, image: "images/p5.jpg", description: "چرم طبیعی ت" },
+    { id: 7, name: "تیشرت سفید مردانه ", price: 1500000, image: "images/p6.jpg", description: "کاملا نخی " },
+    { id: 8, name: "شلوار جین ", price: 4000000, image: "images/p7.jpg", description: "سنگشور شده " },
+    { id: 9, name: "کفش ورزشی ", price: 8000000, image: "images/p8.jpg", description: "بسیار راحت " },
+    { id: 10, name: "سوییشرت مردانه ", price: 2000000, image: "images/p9.jpg", description: "سبک و راحت " },
+    { id: 11, name: "جلیقه ", price: 3000000, image: "images/p10.jpg", description: "دارای جیب " },
+    { id: 12, name: "دستکش چرمی ", price: 1000000, image: "images/p11.jpg", description: "چرمی و خزدار " },
+    { id: 13, name: "عینک افتابی ", price: 12000000, image: "images/p12.jpg", description: "پلاریزه ومحاقظ (uv) " },
+    { id: 14, name: "عطر ", price: 15000000, image: "images/p13.jpg", description: "باپخش بوی بالا " },
+    { id: 15, name: "کیف زنانه", price: 5500000, image: "images/p14.jpg", description: "جادار با بند بلند " },
 ];
-// تابع نمایش سبد خرید با قابلیت حذف و تایید نهایی
-function openCart() {
-    if (cart.length === 0) {
-        alert("سبد خرید شما فعلاً خالی است!");
-        return;
-    }
-
-    let message = "لیست خرید شما:\n\n";
-    let total = 0;
-
-    cart.forEach((item, index) => {
-        message += `${index + 1}. ${item.name} - ${item.price.toLocaleString()} تومان\n`;
-        total += item.price;
-    });
-
-    message += `\n-------------------\nمجموع کل: ${total.toLocaleString()} تومان`;
-    message += `\n\n✅ برای 'تایید نهایی' روی OK کلیک کنید.\n❌ برای 'حذف آخرین کالای اضافه شده' روی Cancel کلیک کنید.`;
-
-    // نمایش پنجره تایید نهایی
-    const result = confirm(message);
-
-    if (result) {
-        alert("سفارش شما با موفقیت تایید شد! ممنون از خرید شما.");
-        cart = []; // خالی کردن سبد بعد از خرید
-        document.getElementById('cart-count').innerText = "0";
-    } else {
-        // حذف آخرین کالا در صورت زدن دکمه Cancel
-        if (cart.length > 0) {
-            const removed = cart.pop();
-            alert(`محصول "${removed.name}" از سبد حذف شد.`);
-            document.getElementById('cart-count').innerText = cart.length;
-        }
-    }
-}
-
 let cart = [];
-// نمایش محصولات در صفحه
-const productGrid = document.getElementById('product-grid');
-function renderProducts() {
-    products.forEach(p => {
-        productGrid.innerHTML += `
-            <div class="product-card" onclick="openDetails(${p.id})">
-                <img src="${p.img}" alt="${p.name}" style="width:100%">
-                <h3>${p.name}</h3>
-                <p>قیمت: ${p.price.toLocaleString()} تومان</p>
-                <button onclick="addToCart(event, ${p.id})">افزودن به سبد</button>
-            </div>
-        `;
-    });
+
+const productsDiv = document.getElementById("products");
+const cartCount = document.getElementById("cart-count");
+const cartModal = document.getElementById("cart-modal");
+const cartItems = document.getElementById("cart-items");
+const totalPrice = document.getElementById("total-price");
+
+const productModal = document.getElementById("product-modal");
+const detailName = document.getElementById("detail-name");
+const detailImage = document.getElementById("detail-image");
+const detailDesc = document.getElementById("detail-desc");
+const detailPrice = document.getElementById("detail-price");
+
+products.forEach(product => {
+    const div = document.createElement("div");
+    div.className = "product";
+    div.innerHTML = `
+        <img src="${product.image}">
+        <h3>${product.name}</h3>
+        <p>${product.price} تومان</p>
+        <button onclick="showProduct(${product.id})">
+            مشاهده جزئیات
+        </button>
+    `;
+    productsDiv.appendChild(div);
+});
+function showProduct(id) {
+    const product = products.find(p => p.id === id);
+
+    detailName.innerText = product.name;
+    detailImage.src = product.image;
+    detailDesc.innerText = product.description;
+    detailPrice.innerText = product.price;
+
+    document.getElementById("add-btn").onclick = function () {
+        addToCart(id);
+    };
+
+    productModal.classList.remove("hidden");
 }
 
-function addToCart(event, id) {
-    event.stopPropagation(); // برای اینکه وقتی دکمه را می‌زنیم، جزئیات باز نشود
-    const product = products.find(p => p.id === id);
-    cart.push(product);
-    document.getElementById('cart-count').innerText = cart.length;
+function closeProduct() {
+    productModal.classList.add("hidden");
+}
+function addToCart(id) {
+    const product = products.find(p => p.id === id);
+    const item = cart.find(i => i.id === id);
+
+    if (item) {
+        item.qty++;
+    } else {
+        cart.push({ ...product, qty: 1 });
+    }
+
+    updateCart();
+
+    // سبد خرید باز شود
+    cartModal.classList.remove("hidden");
 }
 
-// برای شروع کار
-renderProducts();
-// نمایش سبد خرید
-function openCart() {
-    let cartContent = "لیست خرید شما:\n";
-    let total = 0;
-    cart.forEach((item, index) => {
-        cartContent += `${index + 1}. ${item.name} - ${item.price.toLocaleString()} تومان\n`;
-        total += item.price;
-    });
-    alert(cartContent + "\nمجموع کل: " + total.toLocaleString() + " تومان");
+function updateCart() {
+    cartItems.innerHTML = "";
+    let total = 0;
+    let count = 0;
+
+    cart.forEach(item => {
+        total += item.price * item.qty;
+        count += item.qty;
+
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <img src="${item.image}">
+                <div>
+                    <h4>${item.name}</h4>
+                    <p>${item.qty} × ${item.price}</p>
+                    <button onclick="removeItem(${item.id})">حذف</button>
+                </div>
+            </div>
+        `;
+    });
+
+    cartCount.innerText = count;
+    totalPrice.innerText = total;
 }
 
-// نمایش جزئیات محصول
-function openDetails(id) {
-    const p = products.find(item => item.id === id);
-    alert(`نام محصول: ${p.name}\nتوضیحات: ${p.desc}\nقیمت: ${p.price.toLocaleString()} تومان`);
+function removeItem(id) {
+    cart = cart.filter(i => i.id !== id);
+    updateCart();
 }
-// این کد را به انتهای فایل script.js، بعد از تمام کدهای قبلی اضافه کن
 
-function openCart() {
+document.getElementById("cart-icon").onclick = () => {
+    cartModal.classList.remove("hidden");
+};
+
+function closeCart() {
+    cartModal.classList.add("hidden");
+}
+function confirmOrder() {
     if (cart.length === 0) {
-        alert("سبد خرید شما خالی است!");
+        alert("سبد خرید خالی است");
         return;
     }
 
-    let message = "🛒 لیست خرید شما:\n\n";
-    let total = 0;
+    alert("✅ سفارش شما با موفقیت ثبت شد");
 
-    cart.forEach((item, index) => {
-        message += `${index + 1}. ${item.name} - ${item.price.toLocaleString()} تومان\n`;
-        total += item.price;
-    });
-
-    message += `\n-------------------\n💰 مجموع کل: ${total.toLocaleString()} تومان`;
-    message += `\n\n✅ برای 'تایید نهایی' روی OK کلیک کنید.\n❌ برای 'حذف آخرین کالا' روی Cancel کلیک کنید.`;
-
-    const result = confirm(message);
-
-    if (result) {
-        alert("🎉 سفارش شما تایید شد! ممنون از خرید شما.");
-        cart = []; 
-        document.getElementById('cart-count').innerText = "0";
-    } else {
-        if (cart.length > 0) {
-            const removed = cart.pop();
-            alert(`🗑 محصول "${removed.name}" از سبد حذف شد.`);
-            document.getElementById('cart-count').innerText = cart.length;
-        }
-    }
+    // خالی کردن سبد
+    cart = [];
+    updateCart();
+    cartModal.classList.add("hidden")
 }
