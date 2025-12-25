@@ -1,20 +1,19 @@
-// لیست ۱۵ محصول پوشاک
 const products = [
-    { id: 1, name: "شال گردن ", price: 750000, images: "images/p15.jpg/.", description: "بسیار گرم" },
-    { id: 2, name: "کت خز ", price: 6000000, images: "images/p1.jpg/.", description: "مناسب با ترند سال و" },
-    { id: 3, name: "پالتو زنانه ", price: 7000000, images: "images/p2.jpg/.", description: "گرم و با دوام " },
-    { id: 4, name: "کت و شلوار ", price: 7000000, images: "images/p3.jpg/.", description: "مناسب هر فصل " },
-    { id: 5, name: "کت و دامن ", price: 5000000, images: "images/p4.jpg/.", description: "پارچه درجه یک" },
-    { id: 6, name: "کت چرمی ", price: 6000000, images: "images/p5.jpg/.", description: "چرم طبیعی ت" },
-    { id: 7, name: "تیشرت سفید مردانه ", price: 1500000, images: "images/p6.jpg/.", description: "کاملا نخی " },
-    { id: 8, name: "شلوار جین ", price: 4000000, images: "images/p7.jpg/.", description: "سنگشور شده " },
-    { id: 9, name: "کفش ورزشی ", price: 8000000, images: "images/p8.jpg/.", description: "بسیار راحت " },
-    { id: 10, name: "سوییشرت مردانه ", price: 2000000, images: "images/p9.jpg/.", description: "سبک و راحت " },
-    { id: 11, name: "جلیقه ", price: 3000000, images: "images/p10.jpg/.", description: "دارای جیب " },
-    { id: 12, name: "دستکش چرمی ", price: 1000000, images: "images/p11.jpg/.", description: "چرمی و خزدار " },
-    { id: 13, name: "عینک افتابی ", price: 12000000, images: "images/p12.jpg/.", description: "پلاریزه ومحاقظ (uv) " },
-    { id: 14, name: "عطر ", price: 15000000, images: "images/p13.jpg/.", description: "باپخش بوی بالا " },
-    { id: 15, name: "کیف زنانه", price: 5500000, images: "images/p14.jpg/.", description: "جادار با بند بلند " },
+    { id: 1, name: "شال گردن", price: 750000, image: "images/p15.jpg", description: "بسیار گرم" },
+    { id: 2, name: "کت خز", price: 6000000, image: "images/p1.jpg", description: "مناسب با ترند سال" },
+    { id: 3, name: "پالتو زنانه", price: 7000000, image: "images/p2.jpg", description: "گرم و با دوام" },
+    { id: 4, name: "کت و شلوار", price: 7000000, image: "images/p3.jpg", description: "مناسب هر فصل" },
+    { id: 5, name: "کت و دامن", price: 5000000, image: "images/p4.jpg", description: "پارچه درجه یک" },
+    { id: 6, name: "کت چرمی", price: 6000000, image: "images/p5.jpg", description: "چرم طبیعی" },
+    { id: 7, name: "تیشرت سفید مردانه", price: 1500000, image: "images/p6.jpg", description: "کاملا نخی" },
+    { id: 8, name: "شلوار جین", price: 4000000, image: "images/p7.jpg", description: "سنگشور شده" },
+    { id: 9, name: "کفش ورزشی", price: 8000000, image: "images/p8.jpg", description: "بسیار راحت" },
+    { id: 10, name: "سوییشرت مردانه", price: 2000000, image: "images/p9.jpg", description: "سبک و راحت" },
+    { id: 11, name: "جلیقه", price: 3000000, image: "images/p10.jpg", description: "دارای جیب" },
+    { id: 12, name: "دستکش چرمی", price: 1000000, image: "images/p11.jpg", description: "چرمی و خزدار" },
+    { id: 13, name: "عینک آفتابی", price: 1200000, image: "images/p12.jpg", description: "پلاریزه و محافظ (uv)" },
+    { id: 14, name: "عطر", price: 15000000, image: "images/p13.jpg", description: "با پخش بوی بالا" },
+    { id: 15, name: "کیف زنانه", price: 5500000, image: "images/p14.jpg", description: "جادار با بند بلند" }
 ];
 let cart = [];
 
